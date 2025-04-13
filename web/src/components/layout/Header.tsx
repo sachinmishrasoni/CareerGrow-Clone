@@ -10,7 +10,7 @@ import Logo from '../common/logo';
 
 const { Header: AntdHeader } = Layout;
 
-const Header = () => {
+const Header = ({ setIsSidebarOpen }: any) => {
     const { token: { colorBgContainer } } = theme.useToken();
     const navigate = useNavigate();
     return (
@@ -66,8 +66,12 @@ const Header = () => {
                 <GradientButton className='!py-2 shadow-lg'>Login/Signup</GradientButton>
             </div>
 
-            <div className='block md:hidden'>
-                <Button shape='circle' type='text' size='large'><HiMenuAlt3 fontSize={25} /></Button>
+            <div className='flex items-center md:hidden'>
+                <Button shape='circle' type='text' size='large'
+                    onClick={() => setIsSidebarOpen(true)}
+                >
+                    <HiMenuAlt3 fontSize={25} />
+                </Button>
             </div>
         </AntdHeader>
     )

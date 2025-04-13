@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme{
+@theme {
 
     /* Custom colors */
     --color-primary: #054676;
@@ -11,7 +11,20 @@
     --animate-blink: 3s steps(2, start) infinite blink;
 
     @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.2; }
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.2;
+        }
+    }
+}
+
+.sidebar {
+    .ant-drawer-header-title {
+        flex-direction: row-reverse !important;
     }
 }

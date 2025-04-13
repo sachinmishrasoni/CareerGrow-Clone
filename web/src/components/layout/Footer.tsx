@@ -106,12 +106,12 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className='bg-gray-800 text-white p-5 flex justify-between'>
+      <div className='bg-gray-800 text-white p-3 flex flex-col md:flex-row items-center md:justify-between gap-2'>
         <p className='text-sm'>Copyright © 2025 <a className='font-bold !text-yellow-300'>CareerGrow</a> All Rights Reserved</p>
-        <div className='flex divide-x-1 space-x-2'>
-          <p className='text-sm'>Privacy Policy</p>
-          <p className='text-sm'>Terms & Conditions</p>
-          <p className='text-sm'>Refund Policy</p>
+        <div className='flex divide-x-1'>
+          <p className='text-sm px-2'>Privacy Policy</p>
+          <p className='text-sm px-2'>Terms & Conditions</p>
+          <p className='text-sm px-2'>Refund Policy</p>
         </div>
       </div>
     </AntdFooter>
