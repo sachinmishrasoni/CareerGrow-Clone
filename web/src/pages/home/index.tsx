@@ -22,6 +22,7 @@ import CoursesSection from './sections/CoursesSection';
 import HiringProspects from './sections/HiringProspects';
 import ContactSection from './sections/ContactSection';
 import FeedbackSection from './sections/FeedbackSection';
+import EnrollmentModal from "@/components/ui/EnrollmentModal";
 
 
 const slides = [
@@ -94,7 +95,7 @@ const Home = () => {
                 <Container className='h-full'>
                   <div className="relative z-10 flex flex-col gap-3 items-center justify-center h-full px-6 md:px-12 text-white">
                     <div className='subtitle bg-white/20 p-2 px-8 rounded-4xl backdrop-blur-xs'>
-                      <p className='leading-6 uppercase text-lg font-medium'>{slide.subtitle}</p>
+                      <p className='leading-6 uppercase text-lg font-medium text-center'>{slide.subtitle}</p>
                     </div>
                     <h2 className="text-3xl md:text-5xl font-bold mb-4 text-center">{slide.title}</h2>
                     {/* <p className="text-lg md:text-xl mb-6 max-w-xl">{slide.description}</p> */}
@@ -148,6 +149,8 @@ const Home = () => {
       <HiringProspects />
       <FeedbackSection />
       <ContactSection />
+
+      <EnrollmentModal />
     </div>
   )
 }
