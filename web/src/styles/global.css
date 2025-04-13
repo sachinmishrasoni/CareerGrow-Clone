@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme{
+
+    /* Custom colors */
+    --color-primary: #054676;
+    --color-secondary: #f6921e;
+    --color-heading: #192335;
+
+    /* Custom animations */
+    --animate-blink: 3s steps(2, start) infinite blink;
+
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.2; }
+    }
+}
