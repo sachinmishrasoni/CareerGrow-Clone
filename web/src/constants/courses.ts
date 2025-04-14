@@ -15,6 +15,7 @@ export const coursesData: ICourse[] = [
     {
         name: 'B.Tech in Computer Science',
         category: 'Under Graduate Courses',
+        placementGuarantee: true,
         partners: [
             { partner: 'Coursera', fees: '$1200' },
             { partner: 'edX', fees: '$1000' }

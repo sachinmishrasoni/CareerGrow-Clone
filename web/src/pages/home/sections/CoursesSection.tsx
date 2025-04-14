@@ -24,7 +24,7 @@ const TabBox = ({ title, subtitle }: { title: string, subtitle: string }) => {
     return (
         <div className='tab-box p-3 px-5 space-y-1 flex flex-col justify-center items-center'>
             <p className='title text-lg font-semibold'>{title.split(' ')[0]}<span className='hidden md:inline'>{' ' + title.split(' ')[1]}</span></p>
-            <p className='hidden md:blocksubtitle text-xs text-gray-400 tracking-[1.5px] px-2 rounded-full leading-4'>{subtitle}</p>
+            <p className='subtitle hidden md:block text-xs text-gray-400 tracking-[1.5px] px-2 rounded-full leading-4'>{subtitle}</p>
         </div>
     )
 };

@@ -90,11 +90,16 @@ const ContactSection = () => {
                                 placeholder="Select Course"
                                 variant="filled"
                                 options={[
-                                    { value: 'option1', label: 'Option 1' },
-                                    { value: 'option2', label: 'Option 2' },
-                                    { value: 'option3', label: 'Option 3' },
-                                    { value: 'option4', label: 'Option 4' },
-                                    { value: 'option5', label: 'Option 5' },
+                                    { value: 'pg-advanced-banking', label: 'Post Graduate Program in Advanced Banking' },
+                                    { value: 'digital-marketing', label: 'Professional Certificate in Digital Marketing' },
+                                    { value: 'data-analytics', label: 'Advanced Program in Data Analytics' },
+                                    { value: 'hr-management', label: 'Diploma in Human Resource Management' },
+                                    { value: 'financial-accounting', label: 'Certificate in Financial Accounting' },
+                                    { value: 'fullstack-dev', label: 'Full Stack Web Development Program' },
+                                    { value: 'business-analytics', label: 'Executive Program in Business Analytics' },
+                                    { value: 'cybersecurity', label: 'Cybersecurity Essentials Certification' },
+                                    { value: 'ux-ui-design', label: 'UX/UI Design Professional Program' },
+                                    { value: 'banking-finance', label: 'Diploma in Banking and Finance' },
                                 ]}
                             />
                             <GradientButton className="text-lg">Get Call Back</GradientButton>

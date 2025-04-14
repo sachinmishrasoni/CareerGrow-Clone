@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Modal, Form, Input, message } from 'antd';
+import { Modal, Form, Input, message, Select } from 'antd';
 import GradientButton from '../GradientButton';
 
 const EnrollmentModal = () => {
@@ -33,12 +33,13 @@ const EnrollmentModal = () => {
 
     return (
         <Modal
-            title={<p className='text-center text-2xl font-semibold'>🎓 Enroll in a Course</p>}
+            title={<p className='text-2xl text-heading font-semibold'>Enroll Now for Career Success</p>}
             open={isModalOpen}
             onCancel={handleCancel}
             footer={null}
             centered
         >
+            <p className='text-sm text-gray-600 pb-2'>Start your journey toward a successful and rewarding career today.</p>
             <Form layout="vertical" form={form} onFinish={onFinish}>
                 <Form.Item
                     label="Full Name"
@@ -48,7 +49,7 @@ const EnrollmentModal = () => {
                 >
                     {/* <Input placeholder="John Doe" /> */}
                     <Input
-                        className="h-12"
+                        // className="h-12"
                         placeholder="John Doe" size="large"
                         variant="filled"
                     />
@@ -65,7 +66,7 @@ const EnrollmentModal = () => {
                 >
                     {/* <Input placeholder="you@example.com" /> */}
                     <Input
-                        className="h-12"
+                        // className="h-12"
                         placeholder="johndoe@example.com" size="large"
                         variant="filled"
                     />
@@ -80,17 +81,44 @@ const EnrollmentModal = () => {
                     {/* <Input placeholder="123-456-7890" /> */}
 
                     <Input
-                        className="h-12"
+                        // className="h-12"
                         placeholder="123-456-7890" size="large"
                         variant="filled"
                     />
                 </Form.Item>
 
-                <Form.Item>
+                <Form.Item
+                    label="Select a Course"
+                    name="phone"
+                    rules={[{ required: true, message: 'Please select a course' }]}
+                    className='!mb-2'
+                >
+
+                    <Select
+                        // className="!h-13"
+                        size="large"
+                        placeholder="Select Course"
+                        variant="filled"
+                        options={[
+                            { value: 'pg-advanced-banking', label: 'Post Graduate Program in Advanced Banking' },
+                            { value: 'digital-marketing', label: 'Professional Certificate in Digital Marketing' },
+                            { value: 'data-analytics', label: 'Advanced Program in Data Analytics' },
+                            { value: 'hr-management', label: 'Diploma in Human Resource Management' },
+                            { value: 'financial-accounting', label: 'Certificate in Financial Accounting' },
+                            { value: 'fullstack-dev', label: 'Full Stack Web Development Program' },
+                            { value: 'business-analytics', label: 'Executive Program in Business Analytics' },
+                            { value: 'cybersecurity', label: 'Cybersecurity Essentials Certification' },
+                            { value: 'ux-ui-design', label: 'UX/UI Design Professional Program' },
+                            { value: 'banking-finance', label: 'Diploma in Banking and Finance' },
+                        ]}
+                    />
+                </Form.Item>
+
+                <Form.Item className=''>
                     {/* <Button type="primary" htmlType="submit" block>
                         Enroll Now
                     </Button> */}
-                    <GradientButton className='w-full !py-3'>Enroll Now</GradientButton>
+                    <GradientButton className='w-full !py-2.5 mt-2'>Enroll Now</GradientButton>
                 </Form.Item>
             </Form>
         </Modal>

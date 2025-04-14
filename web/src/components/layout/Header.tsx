@@ -30,10 +30,22 @@ const Header = ({ setIsSidebarOpen }: any) => {
                                     Our Courses <IoIosArrowDown className='mt-0.5' />
                                 </Popover>
                             ),
-                            onClick: () => navigate('/courses')
+                            // onClick: () => navigate('/courses')
                         },
                         { key: '3', label: 'Upcoming Batches', onClick: () => navigate('/upcoming-batches') },
-                        { key: '4', label: 'About Us', extra: <IoIosArrowDown />, onClick: () => navigate('/about-us') },
+                        { 
+                            key: '4', label: 'About Us', 
+                            icon: <IoIosArrowDown />,
+                            extra: <IoIosArrowDown />, 
+                            // onClick: () => navigate('/about-us'),
+                            children: [
+                                { key: '4.1', label: 'About Us', onClick: () => navigate('/about-us') },
+                                { key: '4.2', label: 'Contact Us', },
+                                { key: '4.3', label: 'Privacy Policy' },
+                                { key: '4.4', label: 'Terms & Conditions' },
+                                { key: '4.5', label: 'Refund Policy' },
+                            ]
+                        },
                     ]}
                 />
             </div>

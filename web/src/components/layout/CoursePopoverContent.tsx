@@ -1,8 +1,10 @@
-import { Button, Card, Divider, List, Tabs, Typography } from 'antd';
+import { Avatar, Button, Divider, List, Tabs, Typography } from 'antd';
 import { useState } from 'react';
 import { coursesData, ICourse } from '@/constants/courses'; // ← import
+import { useNavigate } from 'react-router-dom';
 
 const CoursePopoverContent = () => {
+    const navigate = useNavigate();
     const [selectedCourse, setSelectedCourse] = useState<ICourse | null>(null);
 
     const renderTab = (category: string) => {
@@ -19,10 +21,10 @@ const CoursePopoverContent = () => {
                             className="hover:bg-gray-100 rounded-md px-2 cursor-pointer transition"
                         >
                             {/* <Badge offset={[-100, 0]} count={'New'} size='small'> */}
-                                <Typography.Text className='!text-base !text-gray-600'>{item.name}</Typography.Text>
-                                {item.placementGuarantee && (
-                                    <p className='text-xs text-green-500 font-medium animate-blink'>🎯Placement Guarantee</p>
-                                )}
+                            <Typography.Text className='!text-base !text-gray-600'>{item.name}</Typography.Text>
+                            {item.placementGuarantee && (
+                                <p className='text-xs text-green-500 font-medium animate-blink'>🎯Placement Guarantee</p>
+                            )}
                             {/* </Badge> */}
                         </List.Item>
                     )}
@@ -50,28 +52,35 @@ const CoursePopoverContent = () => {
                 />
 
                 {selectedCourse ? (
-                    <div className='w-[400px] p-3 bg-gray-100 rounded-xl space-y-3 inset-shadow-sm'>
+                    <div className='w-[400px] p-3 rounded-xl space-y-3'>
                         <Typography.Title level={5}>Partners for {selectedCourse.name}</Typography.Title>
                         <div className='flex flex-col gap-2'>
                             {selectedCourse.partners.map((partnerInfo, index) => (
-                                <Card key={index} size="small" className='shadow-md'>
-                                    <p><strong>Partner:</strong> {partnerInfo.partner}</p>
-                                    <p><strong>Course:</strong> {selectedCourse.name}</p>
-                                    <p><strong>Fees:</strong> {partnerInfo.fees}</p>
-                                </Card>
+                                <div key={index} className='p-1 rounded-md flex gap-2 items-center shadow-md cursor-pointer border border-gray-200'
+                                    onClick={() => navigate(`/courses/${selectedCourse.name}`)}
+                                >
+                                    <Avatar shape='square' size={75} src='https://about.coursera.org/static/blueCoursera-646f855eae3d677239ea9db93d6c9e17.svg' />
+                                    <div>
+                                        <p><strong>Partner:</strong> {partnerInfo.partner}</p>
+                                        <p><strong>Course:</strong> {selectedCourse.name}</p>
+                                        <p><strong>Fees:</strong> {partnerInfo.fees}</p>
+                                    </div>
+                                </div>
                             ))}
                         </div>
                     </div>
-                ): (
-                    <div className='w-[400px] p-3 bg-gray-50 rounded-xl space-y-1 inset-shadow-sm flex flex-col items-center justify-center'>
-                        <p className='font-semibold text-lg'>No Course Selected</p>
-                        <p className='text-gray-500 text-lg'>Select a course to see its Partners</p>
+                ) : (
+                    <div className='w-[400px] p-3 rounded-xl space-y-1 flex flex-col items-center justify-center'>
+                        {/* <p className='font-semibold text-lg'>No Course Selected</p>
+                        <p className='text-gray-500 text-lg'>Select a course to see its Partners</p> */}
                     </div>
                 )}
             </div>
 
             <Divider className='!my-1.5' />
-            <Button type="text" shape='round' className='w-full'>View All Courses</Button>
+            <Button type="text" shape='round' className='w-full'
+                onClick={() => navigate('/courses')}
+            >View More Courses</Button>
         </div>
     );
 };
