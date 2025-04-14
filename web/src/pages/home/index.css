@@ -1,3 +1,13 @@
+.swiper-container{
+    .navi-btns{
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
+    &:hover .navi-btns{
+        opacity: 1;
+    }
+}
+
 .course-tabs {
     border-radius: 15px;
     background: transparent !important;

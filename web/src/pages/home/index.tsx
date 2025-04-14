@@ -65,7 +65,7 @@ const Home = () => {
   const nextRef = useRef(null)
   return (
     <div className='home-page'>
-      <div className='h-[70vh] relative'>
+      <div className='swiper-container h-[70vh] relative'>
         <Swiper
           modules={[Navigation, Autoplay]}
           slidesPerView={1}
@@ -112,7 +112,7 @@ const Home = () => {
         </Swiper>
 
         {/* Custom Navigation Buttons */}
-        <div className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10 px-2">
+        <div className="navi-btns absolute top-1/2 left-0 transform -translate-y-1/2 z-10 px-2">
           <Button
             ref={prevRef} type="primary" size="large" shape='circle'
             className='!bg-white !text-gray-800 !shadow-md hover:!bg-gray-100 '
@@ -121,7 +121,7 @@ const Home = () => {
           </Button>
         </div>
 
-        <div className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10 px-2">
+        <div className="navi-btns absolute top-1/2 right-0 transform -translate-y-1/2 z-10 px-2">
           <Button
             ref={nextRef} type="primary" size="large" shape='circle'
             className='!bg-white !text-gray-800 !shadow-md hover:!bg-gray-100'
